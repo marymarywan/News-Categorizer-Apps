@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Hi! Robot</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Predict</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  aria-current="page" href="/statistic">Statistic</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bubble',
+            data: {
+                labels: "Africa",
+                datasets: [{
+                label: ["China"],
+                backgroundColor: "rgba(255,221,50,0.2)",
+                borderColor: "rgba(255,221,50,1)",
+                title: "dataTitle1",
+                data: [{
+                    x: 21269017,
+                    y: 5.245,
+                    r: 80
+                }]
+                }, {
+                label: ["Denmark"],
+                backgroundColor: "rgba(60,186,159,0.2)",
+                borderColor: "rgba(60,186,159,1)",
+                title: "dataTitle2",
+                data: [{
+                    x: 258702,
+                    y: 7.526,
+                    r: 10
+                }]
+                }, {
+                label: ["Germany"],
+                backgroundColor: "rgba(0,0,0,0.2)",
+                borderColor: "#000",
+                title: "dataTitle3",
+                data: [{
+                    x: 3979083,
+                    y: 6.994,
+                    r: 15
+                }]
+                }, {
+                label: ["Japan"],
+                backgroundColor: "rgba(193,46,12,0.2)",
+                borderColor: "rgba(193,46,12,1)",
+                title: "dataTitle4",
+                data: [{
+                    x: 4931877,
+                    y: 5.921,
+                    r: 15
+                }]
+                }]
+            },
+            options: {
+                title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+                },
+                scales: {
+                yAxes: [{
+                    scaleLabel: {
+                    display: true,
+                    labelString: "Happiness"
+                    }
+                }],
+                xAxes: [{
+                    scaleLabel: {
+                    display: true,
+                    labelString: "GDP (PPP)"
+                    }
+                }]
+                }
+            }
+        });
+        </script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>

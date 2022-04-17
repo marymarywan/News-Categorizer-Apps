@@ -1,10 +1,9 @@
 from flask import Flask, request, render_template, redirect, url_for
 import pickle
-import mypackage.demo
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['POST'])
 def predict():
     if request.method == 'POST':
         user = request.form["nm"]
